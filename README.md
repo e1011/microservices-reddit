@@ -44,7 +44,8 @@ This app can be deployed for free on Minikube, a local kubernetes cluster
    mysql -uroot < init.sql
    ```
 5. Deploy the app on minikube
-   ```minikube start
+   ```
+   minikube start
    cd manifests
    kubectl apply -f ./
    ```
