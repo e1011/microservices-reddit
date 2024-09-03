@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: filter
+  labels:
+    app: filter
+spec: 
+  replicas: 1
+  selector:
+    matchLabels:
+      app: filter
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 3
+  template:
+    metadata:
+      labels:
+        app: filter
+    spec:
+      containers:
+        - name: filter
+          image: eddyzheng/filter
+          ports:
+            - containerPort: 8080
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: filter
+spec:
+  selector:
+    app: filter
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080

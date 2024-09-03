@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: replies
+  labels:
+    app: replies
+spec: 
+  replicas: 1
+  selector:
+    matchLabels:
+      app: replies
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 3
+  template:
+    metadata:
+      labels:
+        app: replies
+    spec:
+      containers:
+        - name: replies
+          image: eddyzheng/replies
+          ports:
+            - containerPort: 8080
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: replies
+spec:
+  selector:
+    app: replies
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
