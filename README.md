@@ -1,8 +1,8 @@
-I built this to learn system design, networking and devops.
+A full-stack Reddit clone built using Python (Flask), React.js, Java (Spring Boot), and Node.js
 
 ## Architecture
 
-**Microservices Reddit** is composed of 10 microservices written in different languages, deployed using kubernetes. These microservices communicate using rest apis. 
+**Microservices Reddit** is composed of 10 microservices written in different languages, deployed using Kubernetes. These microservices communicate using rest apis. 
 
 ![Architecture of
 microservices](/docs/img/graph.jpeg)
