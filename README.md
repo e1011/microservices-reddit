@@ -1,8 +1,6 @@
-I built this to learn system design, networking and devops.
-
 ## Architecture
 
-**Microservices Reddit** is composed of 10 microservices written in different languages, deployed using kubernetes. These microservices communicate using rest apis. 
+**Microservices Reddit** is composed of 10 microservices written in different languages, deployed using kubernetes.
 
 ![Architecture of
 microservices](/docs/img/graph.jpeg)
